@@ -1,3 +1,5 @@
+from textwrap import wrap
+
 from utils import *
 
 if __name__ == '__main__':
@@ -19,7 +21,8 @@ if __name__ == '__main__':
 
     ciphertext = encrypt(priv_k, msg)
     print('Encrypted message:')
-    print(''.join(map(lambda x: str(x), ciphertext)))
+    txt = ''.join(map(lambda x: str(x), ciphertext))
+    print('\n'.join(wrap(txt, width=70)))
     print()
 
     decrypted = decrypt(pub_k, ciphertext)
