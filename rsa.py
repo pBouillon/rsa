@@ -19,12 +19,12 @@ if __name__ == '__main__':
     print(f'Original message:\n{msg}')
     print()
 
-    ciphertext = encrypt(priv_k, msg)
+    ciphertext = encrypt(pub_k, msg)
     print('Encrypted message:')
     txt = ''.join(map(lambda x: str(x), ciphertext))
     print('\n'.join(wrap(txt, width=70)))
     print()
 
-    decrypted = decrypt(pub_k, ciphertext)
+    decrypted = decrypt(priv_k, ciphertext)
     print('Decrypted message:')
     print(''.join(map(lambda x: str(x), decrypted)))
